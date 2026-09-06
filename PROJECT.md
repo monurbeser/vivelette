@@ -49,7 +49,6 @@ Examples include:
 - `hair_001_front.png`
 - `dress_001.png`
 - `shoes_001.png`
-- `bag_001_back.png`
 - `bag_001_front.png`
 
 All avatar artwork must eventually render using identical transforms. Runtime code must not dynamically fit clothing to the character.
@@ -96,4 +95,4 @@ Do not add these unless a future sprint explicitly requests them:
 
 ## Current Phase
 
-Sprint 2 is the first interactive wardrobe only. Do not implement saving, audio, animation, drag and drop, inventory, store, currency, unlocks, networking, or generated placeholder artwork during Sprint 2.
+Sprint 3 is wardrobe visual polish only. Do not implement thumbnails, saving, audio, animation, drag and drop, inventory, store, currency, unlocks, networking, or generated placeholder artwork during Sprint 3.

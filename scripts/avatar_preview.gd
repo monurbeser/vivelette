@@ -33,9 +33,8 @@ func set_shoes_texture(texture: Texture2D) -> void:
 	_set_layer_texture(&"Shoes", texture)
 
 
-func set_bag_textures(back_texture: Texture2D, front_texture: Texture2D) -> void:
-	_set_layer_texture(&"BagBack", back_texture)
-	_set_layer_texture(&"BagFront", front_texture)
+func set_bag_front_texture(texture: Texture2D) -> void:
+	_set_layer_texture(&"BagFront", texture)
 
 
 func _validate_avatar_layers() -> void:

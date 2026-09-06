@@ -27,7 +27,6 @@ func _on_wardrobe_item_selected(
 			if shoes_texture != null:
 				avatar_preview.set_shoes_texture(shoes_texture)
 		&"Bag":
-			var bag_back_texture: Texture2D = layer_textures.get(&"bag_back") as Texture2D
 			var bag_front_texture: Texture2D = layer_textures.get(&"bag_front") as Texture2D
-			if bag_back_texture != null or bag_front_texture != null:
-				avatar_preview.set_bag_textures(bag_back_texture, bag_front_texture)
+			if bag_front_texture != null:
+				avatar_preview.set_bag_front_texture(bag_front_texture)

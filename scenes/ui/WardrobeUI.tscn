@@ -1,34 +1,50 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene load_steps=3 format=3]
 
 [ext_resource type="Script" path="res://scripts/wardrobe_ui.gd" id="1_wardrobe_ui"]
+[ext_resource type="Texture2D" path="res://assets/ui/wardrobe/wardrobe_panel_bg.png" id="2_panel_bg"]
 
-[node name="WardrobeUI" type="PanelContainer"]
-custom_minimum_size = Vector2(0, 174)
+[node name="WardrobeUI" type="Control"]
+custom_minimum_size = Vector2(0, 307)
 size_flags_horizontal = 3
 script = ExtResource("1_wardrobe_ui")
 
-[node name="Content" type="VBoxContainer" parent="."]
-layout_mode = 2
-theme_override_constants/separation = 12
+[node name="PanelFrame" type="Control" parent="."]
+layout_mode = 0
+clip_contents = true
+mouse_filter = 1
 
-[node name="CategoryBar" type="HBoxContainer" parent="Content"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/separation = 12
+[node name="PanelBackground" type="TextureRect" parent="PanelFrame"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_panel_bg")
+expand_mode = 1
+stretch_mode = 5
 
-[node name="ItemScroll" type="ScrollContainer" parent="Content"]
-layout_mode = 2
-custom_minimum_size = Vector2(0, 76)
-size_flags_horizontal = 3
+[node name="Content" type="Control" parent="PanelFrame"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
 
-[node name="ItemStrip" type="HBoxContainer" parent="Content/ItemScroll"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/separation = 12
+[node name="CategorySlots" type="Control" parent="PanelFrame/Content"]
+layout_mode = 0
+mouse_filter = 1
 
-[node name="EmptyState" type="Label" parent="Content"]
+[node name="ItemSlots" type="Control" parent="PanelFrame/Content"]
+layout_mode = 0
+mouse_filter = 1
+
+[node name="EmptyState" type="Label" parent="PanelFrame/Content"]
 visible = false
-layout_mode = 2
+layout_mode = 0
 custom_minimum_size = Vector2(0, 76)
 text = "No items yet"
 horizontal_alignment = 1
