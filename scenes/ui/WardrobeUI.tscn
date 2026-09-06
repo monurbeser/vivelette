@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/wardrobe_ui.gd" id="1_wardrobe_ui"]
+
+[node name="WardrobeUI" type="PanelContainer"]
+custom_minimum_size = Vector2(0, 174)
+size_flags_horizontal = 3
+script = ExtResource("1_wardrobe_ui")
+
+[node name="Content" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="CategoryBar" type="HBoxContainer" parent="Content"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 12
+
+[node name="ItemScroll" type="ScrollContainer" parent="Content"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 76)
+size_flags_horizontal = 3
+
+[node name="ItemStrip" type="HBoxContainer" parent="Content/ItemScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 12
+
+[node name="EmptyState" type="Label" parent="Content"]
+visible = false
+layout_mode = 2
+custom_minimum_size = Vector2(0, 76)
+text = "No items yet"
+horizontal_alignment = 1
+vertical_alignment = 1

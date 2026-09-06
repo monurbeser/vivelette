@@ -1,4 +1,9 @@
-[gd_scene format=3]
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/avatar/AvatarPreview.tscn" id="1_avatar_preview"]
+[ext_resource type="Script" path="res://scripts/avatar_preview_slot.gd" id="2_avatar_preview_slot"]
+[ext_resource type="Script" path="res://scripts/main.gd" id="3_main"]
+[ext_resource type="PackedScene" path="res://scenes/ui/WardrobeUI.tscn" id="4_wardrobe_ui"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -7,6 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("3_main")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 1
@@ -18,29 +24,53 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(1, 0.94, 0.97, 1)
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
+[node name="SafeArea" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = 48
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 48
+theme_override_constants/margin_bottom = 32
 
-[node name="TitleStack" type="VBoxContainer" parent="CenterContainer"]
+[node name="Layout" type="VBoxContainer" parent="SafeArea"]
 layout_mode = 2
-theme_override_constants/separation = 8
+theme_override_constants/separation = 24
 alignment = 1
 
-[node name="Title" type="Label" parent="CenterContainer/TitleStack"]
+[node name="TitleStack" type="VBoxContainer" parent="SafeArea/Layout"]
 layout_mode = 2
+theme_override_constants/separation = 4
+alignment = 1
+
+[node name="Title" type="Label" parent="SafeArea/Layout/TitleStack"]
+layout_mode = 2
+size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0.86, 0.12, 0.5, 1)
-theme_override_font_sizes/font_size = 86
+theme_override_font_sizes/font_size = 64
 text = "Vivellette"
 horizontal_alignment = 1
 
-[node name="Subtitle" type="Label" parent="CenterContainer/TitleStack"]
+[node name="Subtitle" type="Label" parent="SafeArea/Layout/TitleStack"]
 layout_mode = 2
+size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0.25, 0.2, 0.35, 1)
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 26
 text = "Dress Up"
 horizontal_alignment = 1
+
+[node name="AvatarPreviewArea" type="Control" parent="SafeArea/Layout"]
+layout_mode = 2
+custom_minimum_size = Vector2(520, 520)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+clip_contents = true
+script = ExtResource("2_avatar_preview_slot")
+
+[node name="AvatarPreview" parent="SafeArea/Layout/AvatarPreviewArea" instance=ExtResource("1_avatar_preview")]
+
+[node name="WardrobeUI" parent="SafeArea/Layout" instance=ExtResource("4_wardrobe_ui")]
+layout_mode = 2

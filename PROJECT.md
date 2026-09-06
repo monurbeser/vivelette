@@ -39,12 +39,12 @@ The target MVP will eventually contain:
 All body and wearable avatar artwork must be authored against one fixed master canvas:
 
 ```text
-2048 x 2048 pixels
+1254 x 1254 pixels
 ```
 
 Examples include:
 
-- `body.png`
+- `body_base.png`
 - `hair_001_back.png`
 - `hair_001_front.png`
 - `dress_001.png`
@@ -96,4 +96,4 @@ Do not add these unless a future sprint explicitly requests them:
 
 ## Current Phase
 
-Sprint 0 is project foundation only. Do not implement gameplay, avatar composition, wardrobe selection, saving, audio, animation, or generated placeholder artwork during Sprint 0.
+Sprint 2 is the first interactive wardrobe only. Do not implement saving, audio, animation, drag and drop, inventory, store, currency, unlocks, networking, or generated placeholder artwork during Sprint 2.
