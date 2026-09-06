@@ -11,6 +11,9 @@ const CATEGORIES := [CATEGORY_HAIR, CATEGORY_DRESS, CATEGORY_SHOES, CATEGORY_BAG
 
 const HAIR_FRONT_001 := preload("res://assets/character/hair_front_001.png")
 const DRESS_001 := preload("res://assets/wardrobe/dresses/dress_001.png")
+const SHOES_001 := preload("res://assets/wardrobe/shoes/shoes_001.png")
+const BAG_001_BACK := preload("res://assets/wardrobe/bags/bag_001_back.png")
+const BAG_001_FRONT := preload("res://assets/wardrobe/bags/bag_001_front.png")
 
 const COLOR_PANEL := Color(1.0, 0.88, 0.94, 0.96)
 const COLOR_SELECTED := Color(0.9, 0.13, 0.48, 1.0)
@@ -56,8 +59,25 @@ func _build_items() -> void:
 				},
 			},
 		],
-		CATEGORY_SHOES: [],
-		CATEGORY_BAG: [],
+		CATEGORY_SHOES: [
+			{
+				"id": &"shoes_001",
+				"label": "Shoes 1",
+				"layer_textures": {
+					&"shoes": SHOES_001,
+				},
+			},
+		],
+		CATEGORY_BAG: [
+			{
+				"id": &"bag_001",
+				"label": "Bag 1",
+				"layer_textures": {
+					&"bag_back": BAG_001_BACK,
+					&"bag_front": BAG_001_FRONT,
+				},
+			},
+		],
 	}
 
 
