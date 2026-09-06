@@ -1,0 +1,13 @@
+# Godot 4+ generated/editor state.
+.godot/
+
+# Legacy Godot import cache, harmless if absent.
+.import/
+
+# Local platform/export output.
+/android/
+/builds/
+/exports/
+
+# OS/editor noise.
+.DS_Store
