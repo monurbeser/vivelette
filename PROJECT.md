@@ -70,6 +70,18 @@ The project is iPad-first and landscape-oriented. Use a logical reference viewpo
 
 Build responsive UI with Godot `Control` nodes and containers wherever possible. Avoid absolute UI positioning unless there is a narrow, explicit reason.
 
+## Wardrobe Interaction Architecture
+
+The wardrobe uses four fixed category tabs: Hair, Dress, Shoes, and Bag.
+
+The lower wardrobe shelf is one shared item carousel, not four permanent category-specific rows. Selecting a category updates the carousel contents for that category.
+
+The carousel should show approximately four item slots at rest, align those slots with the decorative shelf compartments in `wardrobe_panel_bg.png`, and snap horizontally by page after touch scrolling.
+
+Wardrobe items use the real production wearable textures as thumbnails. Thumbnail rendering may calculate and cache alpha-visible bounds to frame the visible artwork inside a UI preview slot, but this is only for UI thumbnails. It must never alter the source PNG, avatar texture, avatar coordinates, layer transforms, or equip behavior.
+
+Wardrobe assets should be discovered automatically from the approved asset folders and naming conventions. Do not hardcode item counts or create per-item button nodes for production wardrobe content.
+
 ## Scope Exclusions
 
 Do not add these unless a future sprint explicitly requests them:
@@ -95,4 +107,4 @@ Do not add these unless a future sprint explicitly requests them:
 
 ## Current Phase
 
-Sprint 3 is wardrobe visual polish only. Do not implement thumbnails, saving, audio, animation, drag and drop, inventory, store, currency, unlocks, networking, or generated placeholder artwork during Sprint 3.
+Sprint 4 is wardrobe thumbnail carousel and UX only. Do not implement saving, audio, animation beyond subtle carousel snapping, drag and drop, inventory, store, currency, unlocks, networking, or generated placeholder artwork during Sprint 4.

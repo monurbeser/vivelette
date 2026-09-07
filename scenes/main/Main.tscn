@@ -38,7 +38,7 @@ theme_override_constants/margin_bottom = 0
 
 [node name="Layout" type="VBoxContainer" parent="SafeArea"]
 layout_mode = 2
-theme_override_constants/separation = 24
+theme_override_constants/separation = 16
 alignment = 1
 
 [node name="TitleStack" type="VBoxContainer" parent="SafeArea/Layout"]
